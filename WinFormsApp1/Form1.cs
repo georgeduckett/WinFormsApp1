@@ -2,8 +2,8 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        private int PlayerSpeedX = 1;
-        private int PlayerSpeedY = 1;
+        private int PlayerSpeedX = 5;
+        private int PlayerSpeedY = 5;
         public Drawable Enemy = new Drawable(50, 123, 20, 20, Color.Black);
         public Drawable Player = new Drawable(150, 300, 20, 20, Color.Blue);
         public Form1()
@@ -46,16 +46,16 @@ namespace WinFormsApp1
             switch (e.KeyCode)
             {
                 case Keys.Up:
-
+                    PlayerSpeedY = -Math.Abs(PlayerSpeedY);
                     break;
                 case Keys.Down:
-
+                    PlayerSpeedY = Math.Abs(PlayerSpeedY);
                     break;
                 case Keys.Left:
-
+                    PlayerSpeedX = -Math.Abs(PlayerSpeedX);
                     break;
                 case Keys.Right:
-
+                    PlayerSpeedX = Math.Abs(PlayerSpeedX);
                     break;
                 default:
                     e.Handled = false;
